@@ -9,4 +9,5 @@
 ---
 
 ####项目例子  
-- [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular)
+- [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular)  
+- [generator-angular](https://github.com/yeoman/generator-angular#app)  
