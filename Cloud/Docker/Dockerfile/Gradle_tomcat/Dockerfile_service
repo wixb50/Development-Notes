@@ -1,0 +1,15 @@
+FROM tomcat:gradle
+MAINTAINER wixb50
+
+# In case someone loses the Dockerfile
+RUN rm -rf /etc/Dockerfile
+ADD Dockerfile /etc/Dockerfile
+
+COPY . /usr/local/tomcat/webapps/wechatservice
+
+#build project
+WORKDIR /usr/local/tomcat/webapps/wechatservice
+RUN gradle build
+
+EXPOSE 8080
+ENTRYPOINT ["catalina.sh", "run"]
