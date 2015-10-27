@@ -1,26 +1,26 @@
-#Jenkins教程之——简单远程执行ssh构建
+# Jenkins教程之——简单远程执行ssh构建
 ___
 Jenkins CI is the leading open-source continuous integration server.
 
 
-##说明
+## 说明
 ___
 此教程中jenkins只充当于一个中间件的作用，并且所有的构建和部署都在**远端服务器**完成。
 
-##安装
+## 安装
 ___
-###jenkins安装
+### jenkins安装
 这个自行google去，教程很简单，只要把war包下载执行即可，本文是基于dokcer的jenkins镜像安装的。 
-###gitlab安装 
+### gitlab安装 
 见[gitlab官网](https://gitlab.com/)，或者可以直接使用gitlab托管源码。
 
-##jenkins配置
+## jenkins配置
 ___
 1.配置安全设置：`系统管理->Configure Global Security`中启用安全，然后根据自己需要，可配置用户权限等。  
 
 2.插件安装：`系统管理->管理插件`中安装可选插件，本教程中需要的插件有：GIT client plugin、GIT plugin、Gitlab Hook Plugin、**Publish Over SSH**。  
 
-3.新建一个`构建一个自由风格的软件项目`，输入名称。  
+3.新建一个`构建一个自由风格的软件项目`，输入名称(不要带大写)。  
 
 4.然后在`源码管理`地方选择`Git`输入`Repository URL`，以及配置好`Credentials`(可选择username或者ssh配置)，完成后选择要构建的分支`e.g.,*/develop`。  
 
@@ -32,6 +32,6 @@ ___
 
 **提示：**输入的脚本要自己在远端跑一下，能完整跑通才行，注意为远程服务器git配置号user和name，以及sshKey，这样就不要输入密码pull了。  
 
-##Auth
+## Auth
 ___
 Support by [elegancetse](http://elegencetse.com).
